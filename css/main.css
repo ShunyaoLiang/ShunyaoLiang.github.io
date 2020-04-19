@@ -55,22 +55,37 @@ body {
 	color: #303030
 }
 
-#main a, #main a:visited {
+#main p a, #main p a:visited {
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, #d7ecd9 35%);
 }
 
-#main a:hover, #main a:focus {
+#main p a:hover, #main p a:focus {
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, #b0d9b5 35%);
 }
 
-#main a:active {
+#main p a:active {
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, #80c088 35%);
 	display: inline;
 }
 
-#main img {
+#main p img {
 	display: block;
 	margin: 1em auto;
+}
+
+#main a:hover, #main a:focus {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, #d7ecd9 35%);
+}
+
+#main a:active {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, #b0d9b5 35%);
+}
+
+#main .blog-date {
+	float: right;
+
+	color: #303030;
+	font-family: "Source Sans Pro";
 }
 
 a {
