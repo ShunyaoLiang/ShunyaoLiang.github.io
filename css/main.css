@@ -2,6 +2,18 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap");
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
+:root {
+	--highlight-color: #d7ecd9;
+	--highlight-color-dark: #b0d9b5;
+	--highlight-color-darkest: #80c088;
+
+	--gray: #303030;
+
+	--sans-font: "Source Sans Pro", sans-serif;
+	--serif-font: "Source Serif Pro", serif;
+	--mono-font: "Source Code Pro", monospace;
+}
+
 body {
 	display: flex;
 	flex-wrap: nowrap;
@@ -23,7 +35,7 @@ body {
 #nav a, #nav a:visited {
 	display: block;
 
-	font-family: "Source Sans Pro";
+	font-family: var(--sans-font);
 }
 
 #nav a:hover, #nav a:focus {
@@ -33,7 +45,7 @@ body {
 #main {
 	display: block;
 	width: 48em;
-	font-family: "Source Serif Pro";
+	font-family: var(--serif-font);
 
 	transition: margin-left 0.5s;
 }
@@ -46,25 +58,25 @@ body {
 }
 
 #main h2 {
-	font-family: "Source Sans Pro";
+	font-family: var(--sans-font);
 	font-weight: bold;
 	font-size: x-large;
 }
 
 #main blockquote {
-	color: #303030
+	color: var(--gray);
 }
 
 #main p a, #main p a:visited {
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, #d7ecd9 35%);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, var(--highlight-color) 35%);
 }
 
 #main p a:hover, #main p a:focus {
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, #b0d9b5 35%);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, var(--highlight-color-dark) 35%);
 }
 
 #main p a:active {
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, #80c088 35%);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, var(--highlight-color-darkest) 35%);
 	display: inline;
 }
 
@@ -74,18 +86,18 @@ body {
 }
 
 #main a:hover, #main a:focus {
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, #d7ecd9 35%);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, var(--highlight-color) 35%);
 }
 
 #main a:active {
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, #b0d9b5 35%);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, var(--highlight-color-dark) 35%);
 }
 
 #main .blog-date {
 	float: right;
 
-	color: #303030;
-	font-family: "Source Sans Pro";
+	color: var(--gray);
+	font-family: var(--sans-font);
 	font-size: medium;
 }
 
