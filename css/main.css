@@ -86,9 +86,11 @@ body {
 
 	color: #303030;
 	font-family: "Source Sans Pro";
+	font-size: medium;
 }
 
 a {
 	text-decoration: none;
 	color: black;
+	font-size: medium;
 }
