@@ -11,6 +11,14 @@ body {
 	line-height: 1.5;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: black;
+}
+
 header {
 	padding-top: 10px;	
 }
@@ -28,18 +36,11 @@ main p {
 	padding: 15px;
 
 	border-radius: 10px;
-	color: black;
-	text-align: left;
-	text-decoration: none;
 	transition: background-color 0.2s ease;
 }
 
 .blog:hover {
 	background-color: #fafafa;
-}
-
-.blog:visited {
-	color: black;
 }
 
 .blog h1 {
@@ -77,6 +78,31 @@ article h2 {
 
 article .description {
 	color: #333333;
+}
+
+article img {
+	display: block;
+	margin: 20px auto;
+}
+
+article a {
+	position: relative;
+}
+
+article a::after {
+	background-color: rgba(215, 236, 217, 0.50);
+	content: "";
+	display: block;
+	height: 3px;
+	left: 0;
+	position: absolute;
+	top: 100%;
+	transition: all .2s ease;
+	width: 100%;
+}
+
+article a:hover:after {
+	background-color: rgb(215, 236, 217);
 }
 
 article blockquote {
