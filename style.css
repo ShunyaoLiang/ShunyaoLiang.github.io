@@ -105,6 +105,12 @@ article a:hover:after {
 	background-color: rgb(215, 236, 217);
 }
 
+article .caption {
+	color: #333333;
+	font-size: 0.85em;
+	text-align: center;
+}
+
 article blockquote {
 	color: #333333;
 }
