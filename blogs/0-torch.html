@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Torch &mdash; A Terminal Roguelike About Fire and Light (and maybe the Human Struggle)</title>
+	<title>Torch &mdash; A Terminal Roguelike About Fire and Light</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
 	<meta name="author" content="Shunyao Liang">
 	<meta charset="UTF-8">
@@ -11,15 +11,17 @@
 		<hr>
 	</header>
 	<article>
-		<h1>Torch &mdash; A Terminal Roguelike About Fire and Light (and maybe the Human Struggle)</h1>
+		<h1>Torch &mdash; A Terminal Roguelike About Fire and Light</h1>
 		<span class="description">Modern graphics on a terminal are possible, and it can be beautiful.</span>
 		<img src="../media/torch.gif" alt="A gif of Torch gameplay" />
 		<p><b>Note:</b> This blog may become very outdated very soon! Torch is continually under development, so the details laid out here may not stay accurate forever.
 		<h2>Background</h2>
 		<p>Terminal, or at least terminal-esque, roguelikes have come very far from their origins in BSD's <a href="https://en.wikipedia.org/wiki/Rogue_%28video_game%29"><i>Rogue</i> (1980)</a><sup>1</sup>. And although <i>Rogue</i> itself has lost its popularity over the decades, its close descendant, <a href="https://www.nethack.org/"><i>NetHack</i> (1987)</a>, maintains a following of players still desperately trying to recover the Amulet of Yendor. On the more modern, or rather graphical, side, we have games like Freehold Games' <br><a href="http://www.cavesofqud.com/"><i>Caves of Qud</i> (2015)</a>, which introduces a beautiful new look to the original <i>Rogue</i> aesthetic.
-		<p>However, there seems to be a lack of <b>gradients</b> in terminal roguelikes, gradients that we typically would see in graphical video games arising out of their comparatively complex lighting systems. Dazzling renders of sunlight creeping onto mountain precipices, or the soft flickering of a torch onto stone dungeon walls. This, of course, is due to a historical inability of terminals to display more than 16, and more recently 256, colours<sup>2</sup>. Not unlike the contemporary obsession with "8-bit" art, games like the aforementioned <i>Caves of Qud</i> thus cling to this "retro" aesthetic with their brightly and contrastingly coloured glyphs, and, I believe, with modern terminals capable of "true" or "direct color", hold back the potential of the terminal medium<sup>3</sup>.
-		<img src="../media/caves_of_qud.png" alt="A screenshot of Caves of Qud gameplay" width="480px" />
-		<div class="caption">Caves of Qud brings a beautiful new look to a decades old aesthetic.</div>
+		<p>However, there seems to be a lack of <b>gradients</b> in terminal roguelikes, gradients that we typically would see in graphical video games arising out of their comparatively complex lighting systems. Dazzling renders of sunlight creeping onto mountain precipices, or the soft flickering of a torch onto stone dungeon walls. This, of course, is due to the historical limitations of terminals only being capable of displaying text in 16, more recently 256, colours<sup>2</sup>. Today, we see a resurgence of "8-bit" art. This movement of nostalgia manifests in terminal-esque games as well, with games like the aforementioned <i>Caves of Qud</i> thus clinging to this "retro" aesthetic with brightly and contrastingly coloured glyphs, and, I believe, with modern terminals capable of "true" or "direct color", holding back the potential of the terminal medium<sup>3</sup>.
+		<fig>
+		<img src="http://www.freeholdgames.com/press/caves_of_qud/images/mushroom-campfire.png" alt="A screenshot of Caves of Qud gameplay" width="480px" />
+		<figcaption>Caves of Qud brings a beautiful new look to a decades old aesthetic.</figcaption>
+		</fig>
 		<h2>Introducing Torch</h2>
 		<p>I began <a href="https://github.com/ShunyaoLiang/torch">Torch</a> as a project to try to change this. It takes great visual inspiration from video games like Frictional Games' <br><a href="https://www.amnesiagame.com/"><i>Amnesia: The Dark Descent</i> (2010)</a> and Capybara Games' <br><a href="https://www.capybaragames.com/below/"><i>BELOW</i> (2018)</a>, introducing a more complex light interaction system that gives it the rich graphics akin to those of graphical games. It tells a typical roguelike monomyth of venturing deep into the unknown, slaying vicious monsters, and ultimately save the world from an evil power, but adds a twist through its mechanic of light<sup>4</sup>, being inspired by Asobo Studio's <a href="https://store.steampowered.com/app/752590/A_Plague_Tale_Innocence/"><i>A Plague Tale: Innocence</i> (2019)</a>. In a world enveloped by darkness, fire becomes your greatest friend in staving the monsters of the night.
 		<p>Torch is very much still in development, and is not close to being a complete game, but I have yet to find another terminal video game that features its light casting system, or in other words, that <b>looks so good</b>. The latest C build (as there is a Rust rewrite underway) features an expansive cavern inhabited by snakes and mysterious "floaters" that will extinguish your torches, for you to light up and demonstrate just the surface of what direct color terminals are capable of<sup>5</sup>.
@@ -31,14 +33,6 @@
 		</blockquote>
 		<p>Before the events of the game takes place, a cataclysmic event began to ravage the world. Mayugoro and his firey legions enacted what has come to be known as the Scorching, blackening the land and enveloping the world with a blanket of soot and ash that blots out the sun, leading the world to begin to freeze. The people live in fear of their conflagarant overlord, as they must huddle around the same flames that ruined their homelands to stay alive.
 		<p>You are the Torch-Bearer. One who has bravely decided to venture from the illuminated safeties of the villages that remain, to fight the shadows that lust for human flesh, and to ultimately defeat the tyrrany of Mayugoro, end the Scorching, and bring the light of the sun back to a dying world.
-		<h2>On The Human Struggle</h2>
-		<p>No achievement is completed alone and no roguelike is beaten on the first run.
-		<p>Roguelikes, at their core, are about dying, but returning having gained a better knowledge of the game's mechanics to tackle another randomly generated set of challenges.
-		<blockquote>
-			If I have seen further it is by standing on the shoulders of Giants.
-			<div>&mdash; Isaac Newton</div>
-		</blockquote>
-		<p>When you die in a roguelike, whether it be Torch, the punishingly difficult <i>NetHack</i>, or any other permadeath game, you are passing on the torch down to your descendants. When you recover the graves of previous runs, those graves are a lesson for this character, and each character that will come afterwards. Though we may not succeed in our first attempts, it is with the combined effort across determined tries from you, those around you, and those that will come after, that will ultimately lead to triumph. Video games are a an emerging and promising medium of ideas and concepts. This is the lesson that I hope to convey in my video game, Torch.
 		<h2>Acknowledgements</h2>
 		<p>Thanks to all my friends that have contributed to the development of Torch. I'd also like to thank my dear friend, Tianlin Qu, for his encouragement and his role in Torch's development.
 		<p class="footnote"><sup>1</sup> Which also gave us the standard blight of terminal programs, <i>curses</i>.

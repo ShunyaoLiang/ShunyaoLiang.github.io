@@ -101,7 +101,7 @@ article a:hover:after {
 	background-color: rgb(215, 236, 217);
 }
 
-article .caption {
+article figcaption {
 	color: #333333;
 	font-size: 0.85em;
 	text-align: center;
@@ -113,6 +113,12 @@ article blockquote {
 
 article blockquote div {
 	text-align: right;
+}
+
+article sup {
+	vertical-align: baseline;
+	position: relative;
+	top: -0.4em;
 }
 
 article .footnote {
