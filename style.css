@@ -83,6 +83,7 @@ article img {
 
 article a {
 	position: relative;
+	white-space: nowrap;
 }
 
 article a::after {
