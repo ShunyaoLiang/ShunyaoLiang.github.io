@@ -116,6 +116,10 @@ article blockquote div {
 	text-align: right;
 }
 
+article code {
+	font-size: smaller;
+}
+
 article sup {
 	vertical-align: baseline;
 	position: relative;

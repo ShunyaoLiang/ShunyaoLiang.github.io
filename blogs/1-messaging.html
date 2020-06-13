@@ -2,18 +2,42 @@
 <head>
 	<title>An Elegant Generalisation of Modern Messaging Applications</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="icon" type="image/png" href="../favicon.ico">
 	<meta name="author" content="Shunyao Liang">
 	<meta charset="UTF-8">
 </head>
 <body>
 	<header>
-		<h1>Shunyao Liang</h1>
+		<a href="../index.html"><h1>Shunyao Liang</h1></a>
 		<hr>
 	</header>
 	<article>
 		<h1>An Elegant Generalisation of Modern Messaging Applications</h1>
 		<span class="description">A solution to the status quo of endless Slack copycats.</span>
-		<p>The market of message applications has more or less stabilised itself recently.
+		<h2>Introduction</h2>
+		<img src="https://cdn.brandfolder.io/5H442O3W/as/q7e86y-bzoxrk-47uef2/Linux_Slack_Client_IN.png?width=700&height=517" alt="Screenshot of the Slack interface" />
+		<p>I think I'm intimately familiar with the <a href="https://slack.com">Slack</a> interface, but I've only really used it once or twice in my entire life. Where I gained this intimacy, was from the hours I've wasted on <a href="https://discord.com/">Discord</a> talking to people and scrolling endlessly through missed chatlogs. Inspired by the IRC chatrooms of days yonder, Slack has more-or-less defined the modern generation of identical messaging applications<sup>1</sup>. The notion of an immutable set of channels, each assigned to some vague topic like &ldquo;general&rdquo;, &ldquo;music&rdquo;, or even worse, &ldquo;memes&rdquo;, is now the standard across messengers like Discord and <a href="https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software">Micro$oft Teams</a> and a thousand more copycats. Though each application adds their own trivial little spins on it and sell themselves on it, they all fundamentally run on the same core architecture: Servers, are made of categories, are made of channels, are made of messages. That's it<sup>2</sup>.
+		<p class="footnote"><sup>1</sup> Even preserving the convention of prefixing channels with a #.
+		<p class="footnote"><sup>2</sup> And private messages and group chats, which are discussed later.
+		<h2>Conversations as Trees</h2>
+		<p>This design is little more than a more real-time and instantaneous equivalent to email. Actually, it's worse, because emails are not forced to conform to the arbitrary dictation of &ldquo;allowed topics&rdquo;, which take the form of channels in Slack-likes<sup>1</sup>. In this claustraphobic design, concurrent conversation threads are mangled and twisted, as it becomes impossible to discern who is responding to who. Worse, threads may split, turning the channel into a Gordion Knot. Possibly important messages are drowned out by a later conversation. Linear channels are unmanageable and cumbersome once the number of participants in a conversation is more than three. My solution is a radical new approach to the messenger architecture. One where the <b>&ldquo;channels&rdquo; can be dynamically created by <i>users</i></b><sup>2</sup> and directly <b>reflect the topic of conversation</b>. This is achieved by not storing a <i>list</i> of channels, but rather storing them as a <i>tree</i><sup>3</sup>. This does not change the fact that channels are lists of messages, just how channels are organised. Starting a conversation is simply the addition of a child node to perhaps a &ldquo;server node&rdquo;. If that conversation splits, another child node is created, and users may select entire subtrees of channels or conversations to listen to or to ignore.
+		<p>What do I mean? Imagine this: You have an interface very similar to Slack, with the leftmost being servers. Clicking on one, you find a <code>#video-games</code> channel node which currently has two child nodes, one named <code>#torch</code> and another named <code>#valorant</code>. <b>Important Note:</b> <code>#video-games</code> is not a channel &ldquo;folder&rdquo;; it's its own channel and it's still possible to send messages within it. This will be elaborated on later.
+		<img src="../media/messenger_diagram_0.png" />
+		<p>You don't want to play Torch nor Valorant, so you try to start a new conversation about Stardew Valley.
+		<img src="../media/messenger_diagram_1.png" />
+		<p>Fortunately, another member of the server also likes Stardew Valley is online, and you two begin to have a conversation about the game in <code>#sdv</code>. Eventually, the participants of <code>#valorant</code> are no longer interested, and begin to also have a conversation about Stardew Valley. Crisis! There are now two concurrent conversations in <code>#sdv</code>, and though this is a small example, conversation concurrency is very dangerous with more participants. Two things have happened: <code>#valorant</code> is no longer being used<sup>4</sup>, and there are now two conversations in <code>#sdv</code>. This is how the tree model may respond:
+		<img src="../media/messenger_diagram_2.png" />
+		<p>The <code>#valorant</code> channel disappears<sup>5</sup>, and the new conversation in <code>#sdv</code> gets two new child nodes, with a name reflecting its topic of both conversations occuring in the channel. In the next section, we'll discuss how this is actually achieved. This tree could, hypothetically, expand downwards infinitely, allowing endless nesting of conversations.
+		<p class="footnote"><sup>1</sup> The almost-authoritarian issue of being off-topic is far too common in Discord servers.
+		<p class="footnote"><sup>2</sup> And not by some absent workspace administrator.
+		<p class="footnote"><sup>3</sup> For the not-technically-inclined, I'm not talking about botanical trees, but rather a <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)">hierarchal tree structure</a>, with a &ldquo;root&rdquo; node connected to subtrees of &ldquo;child&rdquo; nodes.
+		<p class="footnote"><sup>4</sup> We'll later call this &ldquo;being listened&rdquo;.
+		<p class="footnote"><sup>5</sup> I haven't decided what happens to channels with no more listeners. Deletion may be undesirable if the conversation wasn't sensitive, and I haven't found an efficient way to archive dead channels.
+		<p><b>You've reached the end of the article for now!</b> This is still actively being written, but I hope, with what has been written so far, my proposal for a new messenger system is a little clearer. Please stay tuned!
+		<h2>Further Reading</h2>
+		<ul>
+			<li><a href="https://zulipchat.com/why-zulip/">&ldquo;Why Zulip?&rdquo;</a>&mdash; Discusses similar concerns about Slack-like messengers as this article, and how Zulip tries to solve that.
+		</ul>
 	</article>
 </body>
 </html>
