@@ -1,0 +1,19 @@
+html {
+	background-color: white;
+	font-family: 'Noto Serif SC', serif;
+}
+
+body {
+	margin: 1in;
+	max-width: 60em;
+	text-align: justify;
+}
+
+a {
+	text-underline-offset: 0.1em;
+}
+
+.sus {
+	/* Among Us?? */
+	cursor: url('http://www.rw-designer.com/cursor-extern.php?id=142007'), auto;
+}
